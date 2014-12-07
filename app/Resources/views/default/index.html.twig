@@ -1,5 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    Homepage.
+<div style="position: fixed; display: block; z-index: 1000; top: 50%;" class="hidden-md hidden-lg">
+    <button type="button" data-toggle="sidebar" data-target=".sidebar-left">...</button>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-7 col-sm-3 col-md-3 sidebar sidebar-left sidebar-animate sidebar-md-show">
+            {# TODO: Filters #}
+        </div>
+        <div id="map_canvas" class="main map-canvas col-md-9 col-md-offset-3">
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDg1K16sEI0b2_XWr2N6dsBTwj8ASXQDN0&sensor=true"></script>
+    <script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(5, -75),
+                zoom: 6,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+        }
+        initialize();
+    </script>
 {% endblock %}

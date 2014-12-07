@@ -3,11 +3,43 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block stylesheets %}
+            {% stylesheets 
+                'bundles/app/vendor/bootstrap/css/bootstrap.min.css' filter='cssrewrite' 
+                'bundles/app/vendor/bootstrap-sidebar/css/*' filter='cssrewrite'
+                'bundles/app/css/*' filter='cssrewrite' 
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">EarthQuake Catalogue</a>
+                </div>
+            </div>
+        </nav>
+        <div class="body-content">
+            {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}
+            {% javascripts
+                '@AppBundle/Resources/public/vendor/jquery/jquery-1.11.1.min.js'
+                '@AppBundle/Resources/public/vendor/bootstrap/js/bootstrap.min.js'
+                '@AppBundle/Resources/public/vendor/bootstrap-sidebar/js/*' 
+                '@AppBundle/Resources/public/js/*'
+            %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
     </body>
 </html>
