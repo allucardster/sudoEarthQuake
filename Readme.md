@@ -19,5 +19,5 @@ The Developing is completed with the information the  "International Seismologic
 ![Koding](https://koding.com/a/site.landing/images/slideshow/2x/ss-ide.png "Koding")
 
 ## APIs used
-Googlemap
-International Seismological Centre
+[![Google Map](/images/badge.png?raw=true "Google Map")](https://developers.google.com/maps/?hl=es)
+[![International Seismological Centre](/images/badge.png?raw=true "International Seismological Centre")](http://www.isc.ac.uk/about/)
