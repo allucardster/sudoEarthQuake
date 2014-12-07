@@ -3,9 +3,9 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     symfony
+    database_name:     sudoEarthQuake
     database_user:     root
-    database_password: ~
+    database_password: root
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
 
@@ -17,4 +17,4 @@ parameters:
     locale:            en
 
     # A secret key that's used to generate certain security-related tokens
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    secret:            64N9p465Wr1168L28Kfk185ef3rea7R5
