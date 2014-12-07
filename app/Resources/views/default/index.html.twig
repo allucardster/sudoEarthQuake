@@ -6,28 +6,21 @@
     <button type="button" data-toggle="sidebar" data-target=".sidebar-left">...</button>
 </div>
 #}
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="earthQuakeCatalogueCtrl">
     <div class="row">
         <div class="col-xs-7 col-sm-3 col-md-3 sidebar sidebar-left sidebar-animate sidebar-md-show">
-            {# TODO: Filters #}
+            <div>
+                <input type="number" ng-model="map.center.latitude" />
+                <input type="number" ng-model="map.center.longitude" />
+                <input type="number" ng-model="map.zoom" />
+            </div>
         </div>
         <div id="map_canvas" class="main map-canvas col-md-9 col-md-offset-3">
+            <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+                <ui-gmap-circle ng-repeat="c in circles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius"
+                visible="c.visible" geodesic="c.geodesic" editable="c.editable" draggable="c.draggable" clickable="c.clickable"></ui-gmap-circle>
+            </ui-gmap-google-map>
         </div>
     </div>
 </div>
-{% endblock %}
-{% block javascripts %}
-    {{ parent() }}
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDg1K16sEI0b2_XWr2N6dsBTwj8ASXQDN0&sensor=true"></script>
-    <script type="text/javascript">
-        function initialize() {
-            var mapOptions = {
-                center: new google.maps.LatLng(5, -75),
-                zoom: 6,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-        }
-        initialize();
-    </script>
 {% endblock %}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="sudoEarthQuake">
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -36,6 +36,10 @@
                 '@AppBundle/Resources/public/vendor/bootstrap/js/bootstrap.min.js'
                 '@AppBundle/Resources/public/vendor/bootstrap-sidebar/js/*' 
                 '@AppBundle/Resources/public/vendor/angular/angular.min.js'
+                '@AppBundle/Resources/public/vendor/lodash/lodash.min.js' 
+                '@AppBundle/Resources/public/vendor/angular-google-maps/angular-google-maps.min.js' 
+                '@AppBundle/Resources/public/js/google-maps-loader.js' 
+                '@AppBundle/Resources/public/js/controllers.js' 
             %}
             <script src="{{ asset_url }}"></script>
             {% endjavascripts %}
