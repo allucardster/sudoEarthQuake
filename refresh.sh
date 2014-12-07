@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf app/cache/* app/logs/*
 app/console assets:install
 app/console assets:install --env=dev
 app/console assetic:dump
