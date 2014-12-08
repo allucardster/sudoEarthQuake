@@ -17,8 +17,15 @@
         </div>
         <div id="map_canvas" class="main map-canvas col-md-9 col-md-offset-3">
             <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-                <ui-gmap-circle ng-repeat="c in circles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius"
-                visible="c.visible" geodesic="c.geodesic" editable="c.editable" draggable="c.draggable" clickable="c.clickable"></ui-gmap-circle>
+                <ui-gmap-circle ng-repeat="c in circles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius" visible="c.visible" geodesic="c.geodesic" editable="c.editable" draggable="c.draggable" clickable="c.clickable" >
+                </ui-gmap-circle>
+                <ui-gmap-markers models="markers" coords="'self'" icon="'icon'" click="'onClick'">
+                    <ui-gmap-windows show="show">
+                        {% raw %}
+                        <div ng-non-bindable>{{title}}</div>
+                        {% endraw %}
+                    </ui-gmap-windows>
+                </ui-gmap-markers>
             </ui-gmap-google-map>
         </div>
     </div>
