@@ -1,5 +1,6 @@
 AppBundle\Entity\Earthquake:
     type: entity
+    repositoryClass: AppBundle\Repository\EarthquakeRepository
     table: earthquake
     id:
         id:
