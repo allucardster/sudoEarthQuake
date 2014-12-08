@@ -15,8 +15,7 @@ The Developing is completed with the information the  "International Seismologic
 
 ## Screenshots
 
-![Koding](https://koding.com/a/site.landing/images/slideshow/2x/ss-terminal.png "Koding")
-![Koding](https://koding.com/a/site.landing/images/slideshow/2x/ss-ide.png "Koding")
+![sudoEarthquake](/images/2014-12-08 01:42:30.png?raw=true "sudoEarthQuake")
 
 ## APIs used
 [![Google Map](/images/badge.png?raw=true "Google Map")](https://developers.google.com/maps/?hl=es)

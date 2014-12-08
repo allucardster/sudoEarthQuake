@@ -12,7 +12,6 @@ rm -rf app/cache/* app/logs/*
 HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
 setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/logs
 setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/logs
-php app/console doctrine:database:drop --force --no-interaction
-php app/console doctrine:database:create
+php app/console doctrine:schema:drop --force --no-interaction
 php app/console doctrine:schema:create
-php app/console doctrine:migrations:execute 20141207213455
+php app/console doctrine:migrations:execute 20141207213455 --no-interaction
