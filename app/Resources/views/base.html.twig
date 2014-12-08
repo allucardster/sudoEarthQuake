@@ -5,10 +5,10 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         {% block stylesheets %}
-            {% stylesheets 
-                'bundles/app/vendor/bootstrap/css/bootstrap.min.css' filter='cssrewrite' 
+            {% stylesheets
+                'bundles/app/vendor/bootstrap/css/bootstrap.min.css' filter='cssrewrite'
                 'bundles/app/vendor/bootstrap-sidebar/css/*' filter='cssrewrite'
-                'bundles/app/css/*' filter='cssrewrite' 
+                'bundles/app/css/*' filter='cssrewrite'
             %}
             <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
@@ -34,12 +34,14 @@
             {% javascripts
                 '@AppBundle/Resources/public/vendor/jquery/jquery-1.11.1.min.js'
                 '@AppBundle/Resources/public/vendor/bootstrap/js/bootstrap.min.js'
-                '@AppBundle/Resources/public/vendor/bootstrap-sidebar/js/*' 
+                '@AppBundle/Resources/public/vendor/bootstrap-sidebar/js/*'
                 '@AppBundle/Resources/public/vendor/angular/angular.min.js'
-                '@AppBundle/Resources/public/vendor/lodash/lodash.min.js' 
-                '@AppBundle/Resources/public/vendor/angular-google-maps/angular-google-maps.min.js' 
-                '@AppBundle/Resources/public/js/google-maps-loader.js' 
-                '@AppBundle/Resources/public/js/controllers.js' 
+                '@AppBundle/Resources/public/vendor/lodash/lodash.min.js'
+                '@AppBundle/Resources/public/vendor/angular-google-maps/angular-google-maps.min.js'
+                '@AppBundle/Resources/public/js/google-maps-loader.js'
+                '@AppBundle/Resources/public/js/controllers.js'
+                '@AppBundle/Resources/public/js/jquery-ui.min.js'
+                '@AppBundle/Resources/public/js/functions.js'
             %}
             <script src="{{ asset_url }}"></script>
             {% endjavascripts %}
