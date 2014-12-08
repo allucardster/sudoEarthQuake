@@ -5,18 +5,15 @@ angular.module('sudoEarthQuakeAPI', [])
             post: {}
         };
 
-        endpoints.get.listEarthQuake = function(year) {
+        endpoints.get.listEarthQuake = function(year, params) {
             var url = Routing.generate('app_earthquakerest_list', {year: year}, true),
-                apiPromise;
+                apiPromise,
+                params = params ? params : {};
 
             apiPromise = $http({
                 method: 'GET',
                 url: url,
-                /* Additional data
-                data: {
-                    key: 'value'
-                }
-                */
+                params: params
             });
 
             return apiPromise;

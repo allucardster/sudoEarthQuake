@@ -24,6 +24,7 @@ angular.module('sudoEarthQuake', ['uiGmapgoogle-maps', 'sudoEarthQuakeAPI'])
                 current['latitude'] = $scope.earthquakes[i]['latitude'];
                 current['longitude'] = $scope.earthquakes[i]['longitude'];
                 current['show'] = false;
+                current['date'] = moment($scope.earthquakes[i]['longitude']).format('MM/DD/YYYY hh:mm:ss a');
                 current['onClick'] = function() {
                     console.log("Clicked!");
                     this.show = !this.show;
