@@ -31,4 +31,27 @@ class EarthquakeRepository extends EntityRepository
         ;
         return $qb->getQuery()->getResult();
     }
+    
+    /**
+     * Get Earthquakes nearest by coordenades
+     * 
+     * @param  Float $lat
+     * @param  Float $lon
+     * @return array
+     */
+    public function getEarthQuakeNearest($lat, $lon){
+        
+        $em = $this->getDoctrine()->getManager();
+ 
+        $query = $em->createQuery(
+            'SELECT *
+            FROM AppBundle:Earthquake ea
+            WHERE earth_box( ll_to_earth(:current_user_lat, :current_user_lng), :radius_in_metres) @> ll_to_earth(ea.lat, ea.lon);'
+         )->setParameter('current_user_lat', $lat)
+         ->setParameter('current_user_lng', $lon)
+         ->setParameter('radius_in_metres', 100000);
+        
+        return $query->getResult();
+        
+    }
 }
