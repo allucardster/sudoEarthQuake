@@ -22,5 +22,6 @@ To check application please [click here](http://allucardster.koding.io/sudoEarth
 ![sudoEarthquake](/images/2014-12-08 01:42:30.png?raw=true "sudoEarthQuake")
 
 ## APIs used
-[Google Maps Api V3](https://developers.google.com/maps/documentation/javascript/?hl=en)
-[International Seismological Centre ISC-GEM Catalogue](http://www.isc.ac.uk/iscgem/)
+
+* [Google Maps Api V3](https://developers.google.com/maps/documentation/javascript/?hl=en)
+* [International Seismological Centre ISC-GEM Catalogue](http://www.isc.ac.uk/iscgem/)
