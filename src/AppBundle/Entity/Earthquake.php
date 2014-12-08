@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Rest;
 
 /**
  * Earthquake
@@ -742,5 +743,27 @@ class Earthquake
     public function setUpdatedAtValue()
     {
         $this->updated_at = new \DateTime();
+    }
+
+    /**
+     * @Rest\VirtualProperty
+     * @Rest\SerializedName("latitude")
+     * 
+     * @return float
+     */
+    public function getLatitude()
+    {
+        return $this->lat;
+    }
+
+    /**
+     * @Rest\VirtualProperty
+     * @Rest\SerializedName("longitude")
+     * 
+     * @return float
+     */
+    public function getLongitude()
+    {
+        return $this->lon;
     }
 }

@@ -31,6 +31,8 @@
             {% block body %}{% endblock %}
         </div>
         {% block javascripts %}
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
             {% javascripts
                 '@AppBundle/Resources/public/vendor/jquery/jquery-1.11.1.min.js'
                 '@AppBundle/Resources/public/vendor/bootstrap/js/bootstrap.min.js'
@@ -39,6 +41,7 @@
                 '@AppBundle/Resources/public/vendor/lodash/lodash.min.js' 
                 '@AppBundle/Resources/public/vendor/angular-google-maps/angular-google-maps.min.js' 
                 '@AppBundle/Resources/public/js/google-maps-loader.js' 
+                '@AppBundle/Resources/public/js/apiEndpoints.js' 
                 '@AppBundle/Resources/public/js/controllers.js' 
             %}
             <script src="{{ asset_url }}"></script>
