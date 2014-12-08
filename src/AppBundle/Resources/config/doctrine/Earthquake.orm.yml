@@ -1,0 +1,117 @@
+AppBundle\Entity\Earthquake:
+    type: entity
+    table: earthquake
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        date:
+            type: datetime
+            nullable: false
+        
+        lat: 
+            type: float
+            nullable: false
+        
+        lon:
+            type: float
+            nullable: false
+            
+        smajax:
+            type: float
+            nullable: true
+            
+        sminax:
+            type: float
+            nullable: true
+            
+        strike:
+            type: float
+            nullable: true
+            
+        q:
+            type: string
+            length: 10
+            nullable: true
+            
+            
+        depth:
+            type: float
+            nullable: false
+            
+        unc:
+            type: float
+            nullable: false
+            
+        q2:
+            type: string
+            length: 10
+            nullable: false
+            
+        mw:
+            type: float
+            nullable: false
+            
+        unc2:
+            type: float
+            nullable: false
+            
+        q3:
+            type: string
+            length: 10
+            nullable: false
+            
+        s:
+            type: string
+            length: 10
+            nullable: true
+            
+        mo:
+            type: float
+            nullable: true
+            
+        fac:
+            type: float
+            nullable: true
+            
+        mo_auth:
+            type: string
+            length: 120
+            nullable: true
+            
+        mpp:
+            type: float
+            nullable: true
+            
+        mpr:
+            type: float
+            nullable: true
+        
+        mrr:
+            type: float
+            nullable: true
+            
+        mrt:
+            type: float
+            nullable: true
+            
+        mtp:
+            type: float
+            nullable: true
+            
+        mtt:
+            type: float
+            nullable: true
+            
+        created_at:
+            type: datetime
+            
+        updated_at:
+            type: datetime
+            nullable: true
+            
+            
+    lifecycleCallbacks:
+        prePersist: [ setCreatedAtValue ]
+        preUpdate: [ setUpdatedAtValue ]
